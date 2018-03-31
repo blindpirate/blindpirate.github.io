@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="467px" height="587px" viewBox="0 0 467 587" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>diagram-1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Diagrams" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="diagram-1">
+            <text id="Remote-cache" fill="#02303A" font-family="Lato-Regular, Lato" font-size="14" font-weight="normal" line-spacing="23">
+                <tspan x="288.2365" y="133">Remote cache</tspan>
+            </text>
+            <polygon id="Polygon-Copy-2" stroke="#02303A" points="331 65 386 97.5 386 162.5 331 195 276 162.5 276 97.5"></polygon>
+            <rect id="Rectangle-path" stroke="#02303A" fill-rule="nonzero" x="227" y="20" width="208" height="188" rx="5"></rect>
+            <g id="Group" transform="translate(239.000000, 30.000000)" fill="#02303A" font-family="Lato-Regular, Lato" font-size="12" font-weight="normal">
+                <g id="Gradle-Enterprise">
+                    <text>
+                        <tspan x="0.5" y="12">Gradle Enterprise</tspan>
+                    </text>
+                </g>
+            </g>
+            <rect id="Rectangle-path-Copy" stroke="#02303A" fill-rule="nonzero" x="31" y="246" width="405" height="310" rx="5"></rect>
+            <g id="Group-Copy" transform="translate(43.000000, 256.000000)" fill="#02303A" font-family="Lato-Regular, Lato" font-size="12" font-weight="normal">
+                <g id="Group">
+                    <text id="Gradle">
+                        <tspan x="0.541666667" y="12">Gradle</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Group" transform="translate(322.000000, 339.000000)" fill="#000000" font-family="Lato-Regular, Lato" font-size="14" font-weight="normal">
+                <g id="Local-cache">
+                    <text>
+                        <tspan x="0" y="14">Local cache</tspan>
+                    </text>
+                </g>
+            </g>
+            <polygon id="Polygon-Copy-2" stroke="#000000" points="358 283 413 315.5 413 380.5 358 413 303 380.5 303 315.5"></polygon>
+            <g id="Stroke-622-+-Stroke-623-Copy-2" transform="translate(214.000000, 347.000000) rotate(-270.000000) translate(-214.000000, -347.000000) translate(203.000000, 276.000000)" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11,141.54394 L11,2.12841385" id="Stroke-622"></path>
+                <polyline id="Stroke-623-Copy" transform="translate(11.000000, 6.804687) rotate(-180.000000) translate(-11.000000, -6.804687) " points="-2.22044605e-15 0.5546875 11 13.0546875 22 0.5546875"></polyline>
+            </g>
+            <g id="Stroke-622-+-Stroke-623-Copy-5" transform="translate(186.500000, 219.500000) rotate(-139.000000) translate(-186.500000, -219.500000) translate(175.000000, 109.000000)" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11.6053978,219.612207 L11.6053978,0.792169895" id="Stroke-622"></path>
+                <polyline id="Stroke-623-Copy-3" transform="translate(11.834522, 214.557408) rotate(-360.000000) translate(-11.834522, -214.557408) " points="0.834521811 208.307408 11.8345218 220.807408 22.8345218 208.307408"></polyline>
+            </g>
+            <g id="Group-5" transform="translate(198.000000, 410.000000)">
+                <polygon id="Polygon-Copy-3" stroke="#000000" points="55 0 110 32.5 110 97.5 55 130 3.01980663e-14 97.5 -5.32907052e-15 32.5"></polygon>
+                <text id="Incremental-build" fill="#02303A" font-family="Lato-Regular, Lato" font-size="14" font-weight="normal" line-spacing="20">
+                    <tspan x="18.7925" y="59">Incremental </tspan>
+                    <tspan x="39.9255" y="79">build</tspan>
+                </text>
+            </g>
+            <g id="Group-2" transform="translate(198.000000, 404.000000)">
+                <text id="1" font-family="Lato-Regular, Lato" font-size="12" font-weight="normal" fill="#02303A">
+                    <tspan x="5.70554687" y="13">1</tspan>
+                </text>
+                <circle id="Oval-2" stroke="#02303A" cx="9" cy="9" r="9"></circle>
+            </g>
+            <g id="Group-3" transform="translate(302.000000, 278.000000)">
+                <text id="2" font-family="Lato-Regular, Lato" font-size="12" font-weight="normal" fill="#02303A">
+                    <tspan x="5.67283203" y="13">2</tspan>
+                </text>
+                <circle id="Oval-2-Copy" stroke="#02303A" cx="9" cy="9" r="9"></circle>
+            </g>
+            <g id="Group-4" transform="translate(275.000000, 59.000000)">
+                <text id="3" font-family="Lato-Regular, Lato" font-size="12" font-weight="normal" fill="#02303A">
+                    <tspan x="5.7465625" y="13.1999969">3</tspan>
+                </text>
+                <circle id="Oval-2-Copy-2" stroke="#02303A" cx="9" cy="9" r="9"></circle>
+            </g>
+            <text id="Read/Write" font-family="Lato-Regular, Lato" font-size="12" font-weight="normal" fill="#02303A">
+                <tspan x="122.328" y="205">Read/Write</tspan>
+            </text>
+            <text id="Read/Write-Copy" font-family="Lato-Regular, Lato" font-size="12" font-weight="normal" fill="#02303A">
+                <tspan x="185.328" y="336">Read/Write</tspan>
+            </text>
+            <text id="Read/Write-Copy-2" font-family="Lato-Regular, Lato" font-size="12" font-weight="normal" fill="#02303A">
+                <tspan x="81.328" y="412">Read/Write</tspan>
+            </text>
+            <g id="Stroke-622-+-Stroke-623-Copy-4" transform="translate(159.500000, 406.000000) rotate(-225.000000) translate(-159.500000, -406.000000) translate(148.000000, 372.000000)" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12,67.904784 L12,1.48093591" id="Stroke-622"></path>
+                <polyline id="Stroke-623-Copy" transform="translate(11.972168, 6.837402) rotate(-180.000000) translate(-11.972168, -6.837402) " points="0.972167969 0.587402344 11.972168 13.0874023 22.972168 0.587402344"></polyline>
+            </g>
+            <g id="com-window-script" transform="translate(69.000000, 325.000000)">
+                <path d="M0,10 L52,10" id="Stroke-148" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3,0 L49,0 C50.657,0 52,1.343 52,3 L52,39 C52,40.657 50.657,42 49,42 L3,42 C1.343,42 0,40.657 0,39 L0,3 C0,1.343 1.343,0 3,0 L3,0 Z" id="Stroke-149" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6,5 C6,5.553 6.447,6 7,6 C7.553,6 8,5.553 8,5 C8,4.447 7.553,4 7,4 C6.447,4 6,4.447 6,5 L6,5 Z" id="Stroke-150" fill="#02303A"></path>
+                <path d="M12,5 C12,5.553 12.447,6 13,6 C13.553,6 14,5.553 14,5 C14,4.447 13.553,4 13,4 C12.447,4 12,4.447 12,5 L12,5 Z" id="Stroke-151" fill="#02303A"></path>
+                <path d="M18,5 C18,5.553 18.447,6 19,6 C19.553,6 20,5.553 20,5 C20,4.447 19.553,4 19,4 C18.447,4 18,4.447 18,5 L18,5 Z" id="Stroke-152" fill="#02303A"></path>
+                <path d="M6,16 L18,16" id="Stroke-153" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6,20 L22,20" id="Stroke-154" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10,24 L30,24" id="Stroke-155" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M14,28 L34,28" id="Stroke-156" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10,32 L22,32" id="Stroke-157" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8,36 L28,36" id="Stroke-158" stroke="#02303A" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -3,7 +3,7 @@
     "title": "Bo's Blog",
     "author": "Bo <zhangbodut@gmail.com>",
     "version": "1.7.0",
-    "homepage": "http://blindpirate.github.io",
+    "homepage": "https://blindpirate.github.io",
     "repository": {
         "type": "git",
         "url": "https://github.com/blindpirate/blindpirate.github.io"

@@ -18,28 +18,28 @@ tags:
 原文地址：[https://docs.gradle.com/enterprise/tutorials/caching](https://docs.gradle.com/enterprise/tutorials/caching)
 查看全部译文：[Gradle Enterprise教程](/tags/##GradleEnterprise教程)
 
-Gradle Enterprise的远程缓存（remote cache）可以使构建更快——无论是对开发者还是持续集成服务器（CI）而言。
+Gradle Enterprise的<ruby>构建缓存<rt>build cache</rt></ruby>可以使构建更快——无论是对开发者还是持续集成服务器（CI）而言。
 
 阅读本教程需要
 
 - 1分钟（只阅读简介）
-- 5-10分钟（阅读简介和正文） (read the Introduction and Tour)
-- 15-20分钟（阅读简介、正文并动手操作） minutes (read the Introduction and Tour and perform the Hands-on Lab)
+- 5-10分钟（阅读简介和正文）
+- 15-20分钟（阅读简介、正文并动手操作）
 
 ## 简介：避免重复构建
 
 逻辑上，Gradle有三层复用机制，避免潜在的昂贵任务重复执行：
 
 1. 对工作空间中任务的输出执行Up-to-date检查。
-2. 在本地缓存中查找任务的输出。
-3. 在远程缓存中查找任务的输出，如[Gradle Enterprise](https://gradle.com/build-cache)自带的远程缓存。
+2. 在<ruby>本地缓存<rt>local cache</rt></ruby>中查找任务的输出。
+3. 在<ruby>远程缓存<rt>remote cache</rt></ruby>中查找任务的输出，如[Gradle Enterprise](https://gradle.com/build-cache)自带的远程缓存。
 
 
 ![3层缓存 - 本图是SVG格式，部分浏览器可能支持有限](/img/caching-3-layers.svg)
 
 这三个等级的支持能够在三种不同的目标场景下加速你的构建：
 
-1. 在两次连续运行的Gradle构建之间，通常不会有太多东西发生改变。Gradle的增量构建功能能够只执行和上次构建相比“过时”（not up-to-date）的任务。
+1. 在两次连续运行的Gradle构建之间，通常不会有太多东西发生改变。Gradle的增量构建功能能够只执行和上次构建相比<ruby>过时的<rt>not up-to-date</rt></ruby>任务。
 2. 典型情况下，开发者在不同的分支上维护着不同的工作空间，以执行逻辑上独立的任务。本地缓存使得输出结果能被迅速地跨工作空间复用，而无需访问网络。
 3. 许多时候，CI节点和开发者运行的任务相同，工作空间内的变更也相同。远程缓存允许输出结果在用户和构建服务器上被复用，确保整个团队无需多次重复运行相同的构建。
 
@@ -47,11 +47,11 @@ Gradle Enterprise的远程缓存（remote cache）可以使构建更快——无
 
 接下来，让我们深入探究远程缓存是如何加速你的构建的。
 
-### 全新构建（Clean build）
+### <ruby>全新构建<rt>Clean build</rt></ruby>
 
-考虑一个非常简单的Java示例项目。[这个页面](https://enterprise-samples.gradle.com/s/enhrtnwl2jah6/timeline)是一次构建扫描（build scan，对一次Gradle构建过程的完整记录）的时间线。这次构建是一次全新构建，它运行了工作空间内的所有任务，且没有从缓存中获取任何数据。我们可以通过观察任务的时间线分辨出这一点：没有任何一个任务的状态是`FROM-CACHE`。这个人为构造的示例项目花了大约8秒来执行所有的任务，其中大部分时间花在了编译Java源代码上。
+考虑一个非常简单的Java示例项目。[这个页面](https://enterprise-samples.gradle.com/s/enhrtnwl2jah6/timeline)是一次<ruby>构建扫描<rt>build scan</rt></ruby>（对一次Gradle构建过程的完整记录）的时间线。这次构建是一次全新构建，它运行了工作空间内的所有任务，且没有从缓存中获取任何数据。我们可以通过观察任务的时间线分辨出这一点：没有任何一个任务的状态是`FROM-CACHE`。这个人为构造的示例项目花了大约8秒来执行所有的任务，其中大部分时间花在了编译Java源代码上。
 
-点击任务`:compileJava`可以看到，构建缓存未命中（miss），从而发生了一次储存（store）过程。我们执行了重新编译，并将结果储存到了远程缓存中。
+点击任务`:compileJava`可以看到，构建缓存<ruby>未命中<rt>miss</rt></ruby>，从而发生了一次<ruby>储存<rt>store</rt></ruby>过程。我们执行了重新编译，并将结果储存到了远程缓存中。
 
 通过构建扫描的[构建缓存性能页面](https://enterprise-samples.gradle.com/s/enhrtnwl2jah6/performance/buildCache)，我们还可以发现，这次构建虽然没有能够命中缓存，却存储了3个输出结果到远程缓存中，从而使得后续的构建受益。
 
@@ -61,13 +61,13 @@ Gradle Enterprise的远程缓存（remote cache）可以使构建更快——无
 
 将`compileJava`任务的输出储存起来之后，我们期望，后续使用了构建缓存的构建能够避免重新编译源代码。
 
-[这里](https://enterprise-samples.gradle.com/s/cy4nezuzvj3qi/timeline)是第二次构建的构建扫描的时间线页面，它在第一次构建之后运行，且被配置为使用构建缓存。第二次构建可能是由同一个开发者在不同或者清理后（clean）的工作空间内运行的，也可能是由不同的开发者，甚至是CI运行的，它们的共同点是都开启了构建缓存，从而能够从构建缓存获取数据。
+[这里](https://enterprise-samples.gradle.com/s/cy4nezuzvj3qi/timeline)是第二次构建的构建扫描的时间线页面，它在第一次构建之后运行，且被配置为使用构建缓存。第二次构建可能是由同一个开发者在不同或者<ruby>清理<rt>clean</rt></ruby>后的工作空间内运行的，也可能是由不同的开发者，甚至是CI运行的，它们的共同点是都开启了构建缓存，从而能够从构建缓存获取数据。
 
 随即，我们可以看到所有的编译和测试任务都被标记成了`FROM-CACHE`，这次构建只花了大概不到一秒。使用缓存的输出结果极大地节省了构建的时间。
 
-我们还可以通过[构建缓存性能页面](https://enterprise-samples.gradle.com/s/cy4nezuzvj3qi/performance/buildCache)发现，远程缓存有3次命中（hit），以及具体的缓存查找和传输信息。
+我们还可以通过[构建缓存性能页面](https://enterprise-samples.gradle.com/s/cy4nezuzvj3qi/performance/buildCache)发现，远程缓存有3次<ruby>命中<rt>hit</rt></ruby>，以及具体的缓存查找和传输信息。
 
-真实构建的运行通常要花费几分钟甚至几小时。通常，构建会反复地完成相同的工作，无论是复杂的CI流水线构建（CI pipeline）还是开发者个人的构建。使用Gradle Enterprise的构建缓存，在开发者工时和所需CI设施上都可以节省大量时间。若我们将节省下来的时间乘以开发者的数量以及每天运行的CI构建的数量，总数将是巨大的。
+真实构建的运行通常要花费几分钟甚至几小时。通常，构建会反复地完成相同的工作，无论是复杂的CI<ruby>流水线<rt>pipeline</rt></ruby>构建还是开发者个人的构建。使用Gradle Enterprise的构建缓存，在开发者工时和所需CI设施上都可以节省大量时间。若我们将节省下来的时间乘以开发者的数量以及每天运行的CI构建的数量，总数将是巨大的。
 
 更快的构建意味着开发者可以每天运行更多的构建，更快地发现问题，更高效地交付软件变更。
 
@@ -96,8 +96,7 @@ Gradle Enterprise的远程缓存（remote cache）可以使构建更快——无
 
 1. 一个包含上述源代码的压缩包，用于重现上面的构建扫描。你可以在[这里](https://docs.gradle.com/enterprise/tutorials/caching/enterprise-tutorial-caching.zip)下载。请将它解压到随便什么地方，下文会以`LAB_HOME`指代这个位置。
 2. 一个本地安装的JVM。对JVM的要求详见[https://gradle.org/install](https://gradle.org/install)。_注意：本地安装Gradle构建工具是可选而非必须的。所有的动手操作都会通过Gradle Wrapper来调用Gradle构建工具。_
-
-3. 一个Gradle Enterprise服务器的实例。最方便的方法是通过[Gradle Enterprise试用版](https://gradle.com/enterprise/trial)，选择在线版（hosted），并按照指示和邮件操作。
+3. 一个Gradle Enterprise服务器的实例。最方便的方法是通过[Gradle Enterprise试用版](https://gradle.com/enterprise/trial)，选择<ruby>在线版<rt>hosted</rt></ruby>，并按照指示和邮件操作。
 
 > NOTE
 >
@@ -157,7 +156,7 @@ buildCache {
 
 ### 全新构建
 
-现在，构建已经配置完成，随时可以运行了。我们会运行带`clean`任务的构建，将工作空间内所有任务的输出结果清除掉，然后将所有可缓存任务（cacheable task）的输出结果推送到你的Gradle Enterprise实例上的远程缓存中去。
+现在，构建已经配置完成，随时可以运行了。我们会运行带`clean`任务的构建，将工作空间内所有任务的输出结果清除掉，然后将所有<ruby>可缓存任务<rt>cacheable task</rt></ruby>的输出结果推送到你的Gradle Enterprise实例上的远程缓存中去。
 
 标准的Gradle构建是这样和配置好的Gradle Enterprise实例交互的：
 

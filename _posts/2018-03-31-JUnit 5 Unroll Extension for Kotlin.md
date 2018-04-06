@@ -8,6 +8,7 @@ catalog: true
 tags:
     - 中文
     - 技术
+    - 原创
     - Kotlin
     - Test
     - OpenSource

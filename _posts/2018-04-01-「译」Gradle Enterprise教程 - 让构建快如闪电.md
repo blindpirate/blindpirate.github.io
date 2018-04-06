@@ -85,7 +85,7 @@ Gradle Enterprise帮助你发现设定阶段耗时的数量和来源，从而帮
 
 #### 决定你的构建是否需要更多的内存
 
-听上去可能令人吃惊，但是分配给Gradle构建工具JVM进程的内存数量不合适是构建性能底下的一个常见原因。
+听上去可能令人吃惊，但是分配给Gradle构建工具JVM进程的内存数量不合适是构建性能低下的一个常见原因。
 
 构建扫描可以检测到这一点，例如[这里](https://enterprise-samples.gradle.com/example/s/determine-if-your-build-needs-more-memory)。
 

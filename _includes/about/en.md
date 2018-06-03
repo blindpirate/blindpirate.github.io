@@ -1,4 +1,4 @@
-Hi, I'm Bo, reside in Shanghai.
+Hi, I'm Bo, residing in Shanghai.
 
 Worked for Alibaba and [Nanchao](https://ruff.io), currently software engineer @ [Gradle Inc](https://gradle.com).
 
